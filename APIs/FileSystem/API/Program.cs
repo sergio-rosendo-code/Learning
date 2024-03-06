@@ -1,7 +1,9 @@
+using API.DAL.Repo;
 using API.Infrastructure.Endpoints;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<IDataAccess, DataAccessDapper>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(config =>
 {
