@@ -1,5 +1,5 @@
 using API.DAL.Repo;
-using API.Infrastructure.Endpoints;
+using API.Infrastructure;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

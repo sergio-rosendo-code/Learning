@@ -1,4 +1,6 @@
-namespace API.Infrastructure.Endpoints;
+using API.Features.Common;
+
+namespace API.Infrastructure;
 
 public static class EndpointMapper
 {

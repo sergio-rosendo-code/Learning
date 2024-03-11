@@ -17,7 +17,7 @@ public class DataAccessDapper(IConfiguration appConfig) : IDataAccess
             await connection.QueryAsync(trans.SpName, param: trans.Params, commandType: CommandType.StoredProcedure);
             trans.Status = DataTransaction.TransactionStatus.Success;
         }
-        catch(SqlException exception)
+        catch
         {
             trans.Status = DataTransaction.TransactionStatus.Failure;
         }
@@ -31,7 +31,7 @@ public class DataAccessDapper(IConfiguration appConfig) : IDataAccess
             trans.Results =  await connection.QueryAsync<T>(trans.SpName, param: trans.Params, commandType: CommandType.StoredProcedure);
             trans.Status = DataTransaction.TransactionStatus.Success;
         }
-        catch(SqlException exception)
+        catch
         {
             trans.Status = DataTransaction.TransactionStatus.Failure;
         }

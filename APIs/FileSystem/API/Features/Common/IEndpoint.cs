@@ -1,4 +1,4 @@
-namespace API.Infrastructure.Endpoints;
+namespace API.Features.Common;
 
 public interface IEndpoint
 {
