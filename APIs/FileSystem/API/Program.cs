@@ -1,8 +1,10 @@
 using API.DAL.Repo;
 using API.Infrastructure;
+using FluentValidation;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddSingleton<IDataAccess, DataAccessDapper>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(config =>

@@ -1,0 +1,8 @@
+CREATE TABLE Directories(
+	[ParentDirId] INT NULL FOREIGN KEY REFERENCES [dbo].[Directories](Id), 
+	[Id] INT IDENTITY PRIMARY KEY,
+	[Name] VARCHAR(255) NOT NULL,
+	[Path] VARCHAR(MAX) NOT NULL,
+	[Size] INT NOT NULL,
+	[Create] DATETIME NOT NULL,
+	[Updated] DATETIME NOT NULL);

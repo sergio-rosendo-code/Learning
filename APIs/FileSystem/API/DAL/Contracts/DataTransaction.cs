@@ -11,7 +11,7 @@ public class DataTransaction
     }
     
     public required string SpName { get; init; }
-    public DynamicParameters? Params { get; init; }
+    public DynamicParameters Params { get; init; } = new DynamicParameters();
     public TransactionStatus Status { get; set; } = TransactionStatus.Failure;
 
 }
