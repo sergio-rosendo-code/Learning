@@ -6,7 +6,7 @@ public class Validation : AbstractValidator<CreateDirectoryRq>
 {
     public Validation()
     {
-        RuleFor(rq => rq.Name).NotEmpty().WithMessage("Invalid Directory Name");
-        RuleFor(rq => rq.Path).NotEmpty().WithMessage("Invalid Path");
+        RuleFor(rq => rq.Name).NotEmpty();
+        RuleFor(rq => rq.Path).NotEmpty();
     }
 }
