@@ -2,6 +2,7 @@ namespace API.DAL.Contracts;
 
 public record DirectoryDo
 {
+    public int? ParentDirId { get; set; } // null = parent directory is in root
     public required int? Id { get; set; }
     public required string Name { get; set; }
     public required string Path { get; set; }

@@ -40,10 +40,10 @@ public class Endpoint : IEndpoint
     {
         app.MapPost("api/v1/directories", async (CreateDirectoryRq rq, IValidator<CreateDirectoryRq> va, IDataAccess da) =>
         {
-            var vaRs = va.ValidateAsync(rq);
+            var vaRs = await va.ValidateAsync(rq);
 
-            if (!vaRs.Result.IsValid)
-                return Results.BadRequest(vaRs.Result.Errors);
+            if (!vaRs.IsValid)
+                return Results.BadRequest(vaRs.Errors);
             
             var lt = new LogicTransaction<CreateDirectoryRq, CreateDirectoryRs>
             {
